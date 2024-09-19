@@ -1,0 +1,15 @@
+{
+  "hash": "fe409f2785a559b21aeb6546efe566ae",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Annotated Bibliography\nauthor: UMD Ling\nformat: html\nlisting:\n  contents: posts\n  sort: \"title desc\"\n  type: default\n  categories: true\n---\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
