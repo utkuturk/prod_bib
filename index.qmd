@@ -34,7 +34,15 @@ generate_blog_post <- function(row) {
   tags <- str_split(tags, ",")[[1]]
 
   # Generate the YAML header with formatted categories
-  yaml_header <- paste0("---\ntitle: ", row$handle, "\nauthor: Your Name\ncategories:\n  - ", paste(tags, collapse = "\n  - "), "\n---\n")
+  yaml_header <- paste0(
+    "---\ntitle: ",
+    paste0(handle, ": ", title),
+    "\nauthor: ",
+    person,
+    "\ncategories:\n  - ",
+    paste(tags, collapse = "\n  - "),
+    "\n---\n"
+  )
 
   # Generate the blog post content
   content <- paste0("# ", title, "\n\n**", author, "** (", year, ")", "\n\n", comments)
