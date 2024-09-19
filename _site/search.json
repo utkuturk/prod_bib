@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Annotated Bibliography",
+    "section": "",
+    "text": "# Load necessary libraries\nlibrary(data.table)\n\n# Read the CSV file\nbibliography &lt;- fread(\"annotated_bibliography.csv\")\n\n# Create a table\nbibliography[, table(handle, authors, title, tags, comments, year)]\n\n, , title = morphological production in real time, tags = production, epwi, comments = very dumb paper, year = 2024\n\n      authors\nhandle utku turk\n  utku         1"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]

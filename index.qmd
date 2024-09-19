@@ -1,0 +1,58 @@
+---
+title: Annotated Bibliography
+author: UMD Ling
+format: html
+listing:
+  contents: posts
+  sort: "title desc"
+  type: default
+  categories: true
+---
+
+```{r echo=FALSE}
+# Load necessary libraries
+library(data.table)
+library(stringr)
+
+# Read the CSV file
+bibliography <- fread("annotated_bibliography.csv")
+
+```
+
+```{r echo=FALSE}
+#|echo: false
+generate_blog_post <- function(row) {
+  handle <- row$handle
+  title <- row$title
+  author <- row$authors
+  year <- row$year
+  comments <- row$comments
+  tags <- row$tags
+
+  # Extract tags as a list
+  tags <- str_split(tags, ",")[[1]]
+
+  # Generate the YAML header with formatted categories
+  yaml_header <- paste0("---\ntitle: ", row$title, "\nauthor: Your Name\ncategories:\n  - ", paste(tags, collapse = "\n  - "), "\n---\n")
+
+  # Generate the blog post content
+  content <- paste0("# ", title, "\n\n**", author, "** (", year, ")", "\n\n", comments)
+
+  # Combine the YAML header and content
+  blog_post <- paste(yaml_header, content, sep = "\n")
+
+  # Create the posts directory if it doesn't exist
+  dir.create("posts", showWarnings = FALSE)
+
+  # Write the blog post to a file
+  writeLines(blog_post, paste0("posts/", handle, ".qmd"))
+}
+```
+
+
+```{r echo=FALSE}
+#|echo: false
+for (i in 1:nrow(bibliography)) {
+  generate_blog_post(bibliography[i, ])
+}
+```

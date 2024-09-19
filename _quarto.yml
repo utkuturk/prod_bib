@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+
+
+# Meta
+description-meta: "UMD Ling Production Bibliography"
+author-meta: "UMD Ling"
+
+website:
+  title: "UMD Ling Production Bibliography"
+  navbar:
+    background: light
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
