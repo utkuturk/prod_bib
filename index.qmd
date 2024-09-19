@@ -36,7 +36,7 @@ generate_blog_post <- function(row) {
   # Generate the YAML header with formatted categories
   yaml_header <- paste0(
     "---\ntitle: ",
-    paste0("'", handle, ": ", title, "'"),
+    paste0("\"", handle, ": ", title, "\""),
     "\nauthor: ",
     person,
     "\ncategories:\n  - ",

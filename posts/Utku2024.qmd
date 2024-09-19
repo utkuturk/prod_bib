@@ -1,6 +1,6 @@
 ---
-title: Utku2024
-author: Your Name
+title: "Utku2024: Morphological Production't in real time"
+author: Utku
 categories:
   - production
   -  epwi
